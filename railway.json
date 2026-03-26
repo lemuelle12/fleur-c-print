@@ -1,0 +1,10 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "php -S 0.0.0.0:$PORT -t .",
+    "postDeployCommand": "mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < database.sql",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
